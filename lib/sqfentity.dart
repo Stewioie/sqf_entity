@@ -45,7 +45,7 @@ class SqfEntityProvider extends SqfEntityModelBase {
             dbVersion: _dbModel!.dbVersion ?? 1,
             password: _dbModel!.password,
             databasePath: _dbModel!.databasePath);
-    if (!Platform.isWindows && !Platform.isLinux) {
+    if (Platform.isAndroid || Platform.isIOS) {
       _connectionBase = SqfEntityConnectionMobile(_connection!);
     } else {
       _connectionBase = SqfEntityConnectionFfi(_connection!);
