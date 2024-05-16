@@ -13,6 +13,7 @@ dependencies:
   flutter:
     sdk: flutter
   sqflite_sqlcipher: 3.0.0
+  sqfentity_gen_fix: 2.3.2+6
   synchronized: 3.1.0+1
   path: 1.9.0
   sqflite_common: 2.5.4
