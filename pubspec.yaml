@@ -24,8 +24,3 @@ dependency_overrides:
     git:
       url: https://github.com/Stewioie/sqfentity_gen.git
       ref: main
-  
-
-# dependency_overrides:
-#  sqfentity_gen:
-#    path: ../sqfentity_gen
