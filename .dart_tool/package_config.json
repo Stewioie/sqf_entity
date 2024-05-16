@@ -230,13 +230,13 @@
       "languageVersion": "2.19"
     },
     {
-      "name": "sqf_entity",
+      "name": "sqfentity",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2024-05-16T08:15:34.633740Z",
+  "generated": "2024-05-16T08:22:50.555813Z",
   "generator": "pub",
   "generatorVersion": "3.4.0",
   "flutterRoot": "file:///Users/Work/flutter",
