@@ -12,11 +12,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  sqflite_sqlcipher: 3.0.0
-  sqfentity_gen: 2.4.0
-  synchronized: 3.1.0+1
+  sqflite_sqlcipher: 3.1.0+1
+  sqfentity_gen: 2.5.0
+  synchronized: 3.2.0
   path: 1.9.0
-  sqflite_common: 2.5.4
+  sqflite_common: 2.5.4+2
   sqflite_common_ffi: 2.3.3
   meta: 1.15.0
 
