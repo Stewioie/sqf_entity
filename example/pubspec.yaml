@@ -30,7 +30,7 @@ dependency_overrides:
   sqfentity_gen:
     git:
       url: https://github.com/Stewioie/sqfentity_gen.git
-      ref: main
+      ref: test
 
 dev_dependencies:
   build_runner: 2.4.10

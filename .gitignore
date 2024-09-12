@@ -1,0 +1,7 @@
+﻿.idea
+example/.dart_tool
+example/.flutter-plugins
+example/.flutter-plugins-dependencies
+.flutter-plugins-dependencies
+.flutter-plugins
+.dart_tool
