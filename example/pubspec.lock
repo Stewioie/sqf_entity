@@ -544,7 +544,7 @@ packages:
     description:
       path: "."
       ref: test
-      resolved-ref: c9eac0fa5bca7fd8c9373b48945562a595f6a5bd
+      resolved-ref: "4483485f8a6fb3ef5d406f83b7b360404797a938"
       url: "https://github.com/Stewioie/sqfentity_gen.git"
     source: git
     version: "0.0.0"
