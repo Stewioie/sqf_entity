@@ -33,7 +33,7 @@ class SqfEntityConnectionMobile extends SqfEntityConnectionBase {
   @override
   Future<void> writeDatabase(ByteData data) async {
     final List<int> bytes =
-        data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
+    data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
     try {
       final path = join(getFinalDatabasePath(await getDatabasesPath()),
           connection!.databaseName);
@@ -67,7 +67,7 @@ class SqfEntityConnectionMobile extends SqfEntityConnectionBase {
             connection!.bundledDatabasePath != '' &&
             connection!.bundledDatabasePath != 'null') {
           final ByteData data =
-              await rootBundle.load(connection!.bundledDatabasePath!);
+          await rootBundle.load(connection!.bundledDatabasePath!);
           await writeDatabase(data);
         }
       }

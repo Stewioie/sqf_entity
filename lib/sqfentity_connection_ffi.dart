@@ -18,7 +18,6 @@
 
 import 'dart:async' show Future;
 import 'dart:io';
-
 import 'package:flutter/services.dart';
 import 'package:path/path.dart';
 import 'package:sqfentity/sqfentity_connection_base.dart';
@@ -31,11 +30,14 @@ class SqfEntityConnectionFfi extends SqfEntityConnectionBase {
 
   @override
   Future<void> writeDatabase(ByteData data) async {
-    final List<int> bytes = data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
+    final List<int> bytes =
+    data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
     try {
       final databaseFactory = databaseFactoryFfi;
       sqfliteFfiInit();
-      final path = join(getFinalDatabasePath(await databaseFactory.getDatabasesPath()), connection!.databaseName);
+      final path = join(
+          getFinalDatabasePath(await databaseFactory.getDatabasesPath()),
+          connection!.databaseName);
       if (File(path).existsSync()) {
         await databaseFactory.deleteDatabase(path);
         if (File('$path-wal').existsSync()) {
@@ -57,14 +59,19 @@ class SqfEntityConnectionFfi extends SqfEntityConnectionBase {
     await lock.synchronized(() async {
       final databaseFactory = databaseFactoryFfi;
       sqfliteFfiInit();
-      final path = join(getFinalDatabasePath(await databaseFactory.getDatabasesPath()), connection!.databaseName);
+      final path = join(
+          getFinalDatabasePath(await databaseFactory.getDatabasesPath()),
+          connection!.databaseName);
       final file = File(path);
 
       // check if file exists
       if (!file.existsSync()) {
         // Copy from asset if MyDbModel.bundledDatabasePath is not empty
-        if (connection!.bundledDatabasePath != null && connection!.bundledDatabasePath != '' && connection!.bundledDatabasePath != 'null') {
-          final ByteData data = await rootBundle.load(connection!.bundledDatabasePath!);
+        if (connection!.bundledDatabasePath != null &&
+            connection!.bundledDatabasePath != '' &&
+            connection!.bundledDatabasePath != 'null') {
+          final ByteData data =
+          await rootBundle.load(connection!.bundledDatabasePath!);
           await writeDatabase(data);
         }
       }
@@ -96,8 +103,11 @@ class SqfEntityConnectionFfi extends SqfEntityConnectionBase {
   /// Creates db if not exist
   @override
   void createDb(Database db, int version) async {
-    await db.execute('Create table sqfentitytables (id integer primary key, tablename text, version int, properties text)');
-    await db.execute('Create table sqfentitysequences (id text UNIQUE, value integer)');
-    print('Your database ${connection!.databaseName} v:$version created successfully');
+    await db.execute(
+        'Create table sqfentitytables (id integer primary key, tablename text, version int, properties text)');
+    await db.execute(
+        'Create table sqfentitysequences (id text UNIQUE, value integer)');
+    print(
+        'Your database ${connection!.databaseName} v:$version created successfully');
   }
 }
